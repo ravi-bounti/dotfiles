@@ -13,6 +13,6 @@ files="vimrc tmux.conf zshrc"
 
 ##########
 for file in $files; do
-    echo "Creating symlink to $file in home directory."
-    ln -s ~/.$file $dir/$file
+    echo "Creating symlink to $file in $dir."
+    ln -sf $dir/.$file ~/.$file
 done
