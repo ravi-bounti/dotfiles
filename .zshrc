@@ -32,3 +32,4 @@ alias gitl='git log --graph --oneline --all'
 
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH=$PATH:/home/rkk/.local/bin
+alias config='/usr/bin/git --git-dir=/home/rkk/.cfg/ --work-tree=/home/rkk'
