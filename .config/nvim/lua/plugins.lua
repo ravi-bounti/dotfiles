@@ -1,7 +1,3 @@
--- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary.
-
--- @lint-ignore-every LUA_LUAJIT
-
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 

@@ -1,7 +1,3 @@
--- (c) Meta Platforms, Inc. and affiliates. Confidential and proprietary.
-
--- @lint-ignore-every LUA_LUAJIT
-
 local opt = vim.opt
 
 opt.number = true -- show line numbers

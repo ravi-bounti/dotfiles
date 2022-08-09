@@ -1,4 +1,3 @@
-
 -- Local LSP Configs
 -- This imports ~/.config/nvim/lua/lsp.lua or ~/.config/nvim/lua/lsp/init.lua.
 local lsp_util = require("lsp")
