@@ -1,6 +1,6 @@
+require('impatient')
 require("options")
 require("mappings")
 require("plugins")
 require("lsp")
 require("local")
-vim.cmd('source wsl_clipboard.vimrc')

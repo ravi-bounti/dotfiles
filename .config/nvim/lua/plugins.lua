@@ -24,6 +24,8 @@ vim.cmd([[
 return require("packer").startup(function(use)
   -- Packer can manage itself
   use("wbthomason/packer.nvim")
+  use 'lewis6991/impatient.nvim'
+  use("dstein64/vim-startuptime")
 
   -- Colorscheme
   use {
@@ -148,7 +150,7 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = "all",
+        ensure_installed = {"python"},
         highlight = {
           enable = true,
           disable = { "latex" },

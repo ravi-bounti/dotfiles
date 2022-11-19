@@ -19,4 +19,4 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Treesitter configs
- require("nvim-treesitter.install").prefer_git = true
+-- require("nvim-treesitter.install").prefer_git = true
