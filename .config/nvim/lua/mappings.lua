@@ -33,3 +33,21 @@ vim.api.nvim_set_keymap(
   "<Esc>:w<CR>",
   { noremap = true, silent = true }
 )
+vim.api.nvim_set_keymap(
+  "i",
+  "<c-w>",
+  "<ESC>:wq<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<c-w>",
+  ":wq<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "v",
+  "<c-w>",
+  "<Esc>:wq<CR>",
+  { noremap = true, silent = true }
+)
