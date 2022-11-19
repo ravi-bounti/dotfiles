@@ -27,17 +27,15 @@ return require("packer").startup(function(use)
   use 'lewis6991/impatient.nvim'
   use("dstein64/vim-startuptime")
 
-  -- Colorscheme
-  use {
+  use ({
     "phha/zenburn.nvim",
-    config = function() require("zenburn").setup() end
-  }
+    config = function() 
+      vim.cmd("colorscheme zenburn")
+    end
+  })
 
   use({
     "folke/tokyonight.nvim",
-    config = function()
-      vim.cmd("colorscheme tokyonight")
-    end,
   })
 
   use({
@@ -123,10 +121,11 @@ return require("packer").startup(function(use)
   use({
     "nvim-lualine/lualine.nvim",
     requires = "kyazdani42/nvim-web-devicons",
+    after = "zenburn.nvim", 
     config = function()
       require("lualine").setup({
         options = {
-          theme = "tokyonight",
+          theme = "zenburn",
         },
         sections = {
           lualine_c = {
@@ -150,7 +149,7 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = {"python"},
+        ensure_installed = {"python", "json", "markdown", "sql", "yaml"},
         highlight = {
           enable = true,
           disable = { "latex" },
@@ -363,8 +362,10 @@ return require("packer").startup(function(use)
   use({
     "kyazdani42/nvim-tree.lua",
     requires = "kyazdani42/nvim-web-devicons",
+    cmd = 'NvimTreeToggle',
     config = function()
-      require("nvim-tree").setup({})
+      require("nvim-tree").setup({
+      })
 
       vim.api.nvim_set_keymap(
         "n",
@@ -414,9 +415,8 @@ return require("packer").startup(function(use)
     end,
   })
 
-  -- use 'mfussenegger/nvim-dap'
-  use 'williamboman/nvim-lsp-installer'
-
+  use 'mfussenegger/nvim-dap'
+  -- use 'williamboman/nvim-lsp-installer'
   if packer_bootstrap then
     require("packer").sync()
   end
