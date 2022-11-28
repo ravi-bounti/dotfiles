@@ -383,24 +383,24 @@ return require("packer").startup(function(use)
   use("tpope/vim-surround")
   use("tpope/vim-repeat")
 
-  use({
-    "mhinz/vim-signify",
-    after = "tokyonight.nvim",
-    config = function()
-      local colors = require("tokyonight.colors").setup({})
-      local util = require("tokyonight.util")
+  -- use({
+  --   "mhinz/vim-signify",
+  --   after = "tokyonight.nvim",
+  --   config = function()
+  --     local colors = require("tokyonight.colors").setup({})
+  --     local util = require("tokyonight.util")
 
-      util.highlight("SignifySignAdd", { link = "GitSignsAdd" })
-      util.highlight("SignifySignChange", { link = "GitSignsChange" })
-      util.highlight("SignifySignChangeDelete", { link = "GitSignsChange" })
-      util.highlight("SignifySignDelete", { link = "GitSignsDelete" })
-      util.highlight("SignifySignDeleteFirstLine", { link = "GitSignsDelete" })
+  --     util.highlight("SignifySignAdd", { link = "GitSignsAdd" })
+  --     util.highlight("SignifySignChange", { link = "GitSignsChange" })
+  --     util.highlight("SignifySignChangeDelete", { link = "GitSignsChange" })
+  --     util.highlight("SignifySignDelete", { link = "GitSignsDelete" })
+  --     util.highlight("SignifySignDeleteFirstLine", { link = "GitSignsDelete" })
 
-      vim.g.signify_sign_add = "▊"
-      vim.g.signify_sign_change = "▊"
-      vim.g.signify_sign_change_delete = "~"
-    end,
-  })
+  --     vim.g.signify_sign_add = "▊"
+  --     vim.g.signify_sign_change = "▊"
+  --     vim.g.signify_sign_change_delete = "~"
+  --   end,
+  -- })
 
   use({
     "lukas-reineke/indent-blankline.nvim",

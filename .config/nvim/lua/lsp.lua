@@ -82,7 +82,7 @@ local on_attach = function(client, bufnr)
     "<cmd>lua vim.diagnostic.setloclist()<CR>",
     opts
   )
-  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 
   vim.diagnostic.config({
     virtual_text = {
@@ -108,6 +108,7 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.trim_whitespace,
     null_ls.builtins.formatting.trim_newlines,
+    null_ls.builtins.formatting.black
   },
 })
 

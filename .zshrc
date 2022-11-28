@@ -1,3 +1,6 @@
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -31,7 +34,8 @@ alias gitl='git log --graph --oneline --all'
 # opam configuration
 [[ ! -r /home/rkk/.opam/opam-init/init.zsh ]] || source /home/rkk/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-export PATH="$HOME/.poetry/bin:$PATH"
 export PATH=$PATH:/home/rkk/.local/bin
 alias config='/usr/bin/git --git-dir=/home/rkk/.cfg/ --work-tree=/home/rkk'
 export PYTHONPATH=$PYTHONPATH:/home/rkk/AlgoProblems/AOC/AOC2021
+export PYTHONPATH=$PYTHONPATH:/home/rkk/AlgoProblems/AOC/AOC2022
+export PATH=$(echo "$PATH" | sed -e 's/:\/mnt[^:]*//g')
