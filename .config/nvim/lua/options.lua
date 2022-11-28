@@ -12,7 +12,6 @@ vim.cmd([[
   augroup END
 ]])
 
-
 vim.api.nvim_set_keymap(
   "n",
   "<C-n>",

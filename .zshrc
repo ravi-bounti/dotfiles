@@ -1,5 +1,5 @@
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
+    tmux attach -t auto || tmux new -s auto 
 fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -22,6 +22,7 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=130000 SAVEHIST=130000
 
 # FZF
+# Install FZF via git clone instead of apt-get
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!{.git,.hg}/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -32,10 +33,11 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 alias gitl='git log --graph --oneline --all'
 
 # opam configuration
-[[ ! -r /home/rkk/.opam/opam-init/init.zsh ]] || source /home/rkk/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# [[ ! -r /home/rkk/.opam/opam-init/init.zsh ]] || source /home/rkk/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 export PATH=$PATH:/home/rkk/.local/bin
+export PATH=$PATH:/mnt/c/Windows/SysWOW64
 alias config='/usr/bin/git --git-dir=/home/rkk/.cfg/ --work-tree=/home/rkk'
 export PYTHONPATH=$PYTHONPATH:/home/rkk/AlgoProblems/AOC/AOC2021
 export PYTHONPATH=$PYTHONPATH:/home/rkk/AlgoProblems/AOC/AOC2022
-export PATH=$(echo "$PATH" | sed -e 's/:\/mnt[^:]*//g')
+# export PATH=$(echo "$PATH" | sed -e 's/:\/mnt[^:]*//g')
