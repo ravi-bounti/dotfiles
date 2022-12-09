@@ -38,6 +38,6 @@ alias gitl='git log --graph --oneline --all'
 export PATH=$PATH:/home/rkk/.local/bin
 export PATH=$PATH:/mnt/c/Windows/SysWOW64
 alias config='/usr/bin/git --git-dir=/home/rkk/.cfg/ --work-tree=/home/rkk'
-export PYTHONPATH=$PYTHONPATH:/home/rkk/AlgoProblems/AOC/AOC2021
-export PYTHONPATH=$PYTHONPATH:/home/rkk/AlgoProblems/AOC/AOC2022
+# export PYTHONPATH=$PYTHONPATH:/home/rkk/AlgoProblems/AOC/AOC2021
+export PYTHONPATH=/home/rkk/AlgoProblems/AOC/AOC2022
 # export PATH=$(echo "$PATH" | sed -e 's/:\/mnt[^:]*//g')
