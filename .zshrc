@@ -24,7 +24,7 @@ HISTSIZE=130000 SAVEHIST=130000
 # FZF
 # Install FZF via git clone instead of apt-get
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!{.git,.hg}/*"'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!{.git,.hg}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 alias python='python3'
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
@@ -37,7 +37,11 @@ alias gitl='git log --graph --oneline --all'
 
 export PATH=$PATH:/home/rkk/.local/bin
 export PATH=$PATH:/mnt/c/Windows/SysWOW64
-alias config='/usr/bin/git --git-dir=/home/rkk/.cfg/ --work-tree=/home/rkk'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # export PYTHONPATH=$PYTHONPATH:/home/rkk/AlgoProblems/AOC/AOC2021
 export PYTHONPATH=/home/rkk/AlgoProblems/AOC/AOC2022
 # export PATH=$(echo "$PATH" | sed -e 's/:\/mnt[^:]*//g')
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
