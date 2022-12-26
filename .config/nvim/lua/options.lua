@@ -2,6 +2,8 @@ local opt = vim.opt
 
 opt.number = true -- show line numbers
 opt.relativenumber = true -- show relative numbers by default
+vim.g.python_host_prog = '/usr/local/bin/python3.11'
+vim.g.python3_host_prog = '/usr/local/bin/python3.11'
 
 -- show absolute numbers in insert mode, relative in normal mode
 vim.cmd([[

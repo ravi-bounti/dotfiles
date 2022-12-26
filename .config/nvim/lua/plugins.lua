@@ -145,24 +145,24 @@ return require("packer").startup(function(use)
   })
 
   use("neovim/nvim-lspconfig")
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = {"python", "json", "markdown", "sql", "yaml"},
-        highlight = {
-          enable = true,
-          disable = { "latex" },
-        },
-        indent = {
-          enable = true,
-        },
-        additional_vim_regex_highlighting = true
-      })
-    end,
-  })
+  -- use({
+  --   "nvim-treesitter/nvim-treesitter",
+  --   config = function()
+  --     require("nvim-treesitter.configs").setup({
+  --       ensure_installed = {"python", "lua", "vim", "json", "markdown", "sql", "yaml"},
+  --       highlight = {
+  --         enable = true,
+  --         disable = { "latex" },
+  --       },
+  --       indent = {
+  --         enable = true,
+  --       },
+  --       additional_vim_regex_highlighting = true
+  --     })
+  --   end,
+  -- })
 
-  use("nvim-treesitter/nvim-treesitter-textobjects")
+  -- use("nvim-treesitter/nvim-treesitter-textobjects")
   use({
     "jose-elias-alvarez/null-ls.nvim",
     requires = { "nvim-lua/plenary.nvim" },

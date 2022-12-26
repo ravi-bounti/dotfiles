@@ -18,7 +18,7 @@ vim.g.maplocalleader = " "
 vim.api.nvim_set_keymap(
   "i",
   "<c-s>",
-  "<ESC>:w<CR>a",
+  "<ESC>:w<CR>",
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
