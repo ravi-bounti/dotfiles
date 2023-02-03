@@ -14,13 +14,8 @@ vim.cmd([[
   augroup END
 ]])
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<C-n>",
-  ":NvimTreeToggle<CR>",
-  { noremap = true, silent = true }       
-)
-opt.directory = '/tmp'
+vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+opt.directory = "/tmp"
 opt.showmatch = true -- show matching brackets
 opt.smartindent = true -- use c-like indents when no indentexpr is used
 opt.expandtab = true -- use spaces instead of tabs
@@ -47,3 +42,14 @@ opt.inccommand = "nosplit" -- show effects of substitute incrementally
 opt.mouse = "a" -- enable mouse mode
 
 opt.updatetime = 400 -- decrease time for cursorhold event
+
+-- vim.opt.clipboard = "unnamedplus"
+
+-- if vim.fn.has('wsl') == 1 then
+--   vim.api.nvim_create_autocmd('TextYankPost', {
+--     group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+--       callback = function()
+--         vim.fn.system('clip.exe', vim.fn.getreg('"'))
+--       end,
+--     })
+-- end

@@ -4,12 +4,15 @@ local lsp_util = require("lsp")
 -- This imports `lua/lspconfig/init.lua` from the nvim-lspconfig plugin.
 local nvim_lsp = require("lspconfig")
 
--- Setup language server clients from the neovim@meta plugin.
 -- These will only autostart on the corresponding filetypes, iow you don't need
 -- to gate these behind a filetype check.
 local servers = {
-  -- "jedi_language_server",
-  "rust_analyzer"
+  "jedi_language_server",
+  "dockerls",
+  "rust_analyzer",
+  "tsserver",
+  "bashls",
+  "sumneko_lua"
 }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
@@ -29,4 +32,4 @@ nvim_lsp["jedi_language_server"].setup({
 })
 
 -- Treesitter configs
--- require("nvim-treesitter.install").prefer_git = true
+require("nvim-treesitter.install").prefer_git = true
