@@ -21,15 +21,15 @@ for _, lsp in ipairs(servers) do
   })
 end
 
-nvim_lsp["jedi_language_server"].setup({
-  on_attach = lsp_util.on_attach,
-  capabilities = lsp_util.capabilities,
-  init_options = {
-    workspace = {
-      environmentPath = '/usr/local/bin/python3.11'
-    }
-  }
-})
+-- nvim_lsp["jedi_language_server"].setup({
+--   on_attach = lsp_util.on_attach,
+--   capabilities = lsp_util.capabilities,
+--   init_options = {
+--     workspace = {
+--       environmentPath = '/usr/local/bin/python3.11'
+--     }
+--   }
+-- })
 
 -- Treesitter configs
 require("nvim-treesitter.install").prefer_git = true

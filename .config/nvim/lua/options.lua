@@ -2,8 +2,6 @@ local opt = vim.opt
 
 opt.number = true -- show line numbers
 opt.relativenumber = true -- show relative numbers by default
-vim.g.python_host_prog = '/usr/local/bin/python3.11'
-vim.g.python3_host_prog = '/usr/local/bin/python3.11'
 
 -- show absolute numbers in insert mode, relative in normal mode
 vim.cmd([[
@@ -14,7 +12,7 @@ vim.cmd([[
   augroup END
 ]])
 
-vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 opt.directory = "/tmp"
 opt.showmatch = true -- show matching brackets
 opt.smartindent = true -- use c-like indents when no indentexpr is used
@@ -42,6 +40,9 @@ opt.inccommand = "nosplit" -- show effects of substitute incrementally
 opt.mouse = "a" -- enable mouse mode
 
 opt.updatetime = 400 -- decrease time for cursorhold event
+
+vim.g.python3_host_prog = '/usr/bin/python3' -- Tell Neovim directly which Python executable. Neovim doesn't have to make expensive calls to the OS trying to figure it out
+
 
 -- vim.opt.clipboard = "unnamedplus"
 

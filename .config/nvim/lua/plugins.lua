@@ -29,9 +29,7 @@ return require("packer").startup(function(use)
 
 	use({
 		"phha/zenburn.nvim",
-		config = function()
-			vim.cmd("colorscheme zenburn")
-		end,
+		config = function() require("zenburn").setup() end
 	})
 
 	use({
@@ -47,6 +45,7 @@ return require("packer").startup(function(use)
 
 			require("bufferline").setup({
 				options = {
+					numbers = "ordinal",
 					separator_style = "slant",
 					offsets = {
 						{
@@ -93,6 +92,7 @@ return require("packer").startup(function(use)
 					theme = "zenburn",
 				},
 				sections = {
+					lualine_b = {'diff', 'diagnostics'},
 					lualine_c = {
 						{
 							"filename",
@@ -100,7 +100,6 @@ return require("packer").startup(function(use)
 						},
 					},
 					lualine_x = {
-						"encoding",
 						"fileformat",
 						"filetype",
 					},
@@ -132,12 +131,13 @@ return require("packer").startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
-	use({
-		"liuchengxu/vista.vim",
-		config = function()
-			vim.g.vista_default_executive = "nvim_lsp"
-		end,
-	})
+
+	-- use({
+	-- 	"liuchengxu/vista.vim",
+	-- 	config = function()
+	-- 		vim.g.vista_default_executive = "nvim_lsp"
+	-- 	end,
+	-- })
 
 	use("L3MON4D3/LuaSnip")
 
@@ -292,8 +292,11 @@ return require("packer").startup(function(use)
 							["<c-v>"] = custom_actions.multi_selection_open_vsplit,
 							["<c-s>"] = custom_actions.multi_selection_open_split,
 							["<c-t>"] = custom_actions.multi_selection_open_tab,
+							["<C-u>"] = actions.preview_scrolling_up,
+							["<C-d>"] = actions.preview_scrolling_down,
 						},
 						n = {
+							["<C-h>"] = "which_key",
 							["<esc>"] = actions.close,
 							["<tab>"] = actions.toggle_selection + actions.move_selection_next,
 							["<s-tab>"] = actions.toggle_selection + actions.move_selection_previous,
@@ -301,6 +304,8 @@ return require("packer").startup(function(use)
 							["<c-v>"] = custom_actions.multi_selection_open_vsplit,
 							["<c-s>"] = custom_actions.multi_selection_open_split,
 							["<c-t>"] = custom_actions.multi_selection_open_tab,
+							["<C-u>"] = actions.preview_scrolling_up,
+							["<C-d>"] = actions.preview_scrolling_down,
 						},
 					},
 				},
@@ -317,13 +322,13 @@ return require("packer").startup(function(use)
 			require("telescope").load_extension("fzf")
 
 			vim.keymap.set("n", "<leader><space>", builtin.buffers, { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>ff", function()
-				builtin.find_files({})
-			end, { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>fd", builtin.lsp_definitions, { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>ff", function() builtin.find_files({}) end, { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fc", builtin.current_buffer_fuzzy_find, { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fb", function() builtin.live_grep({grep_open_files=true}) end, { noremap = true, silent = true })
+
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fs", builtin.grep_string, { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { noremap = true, silent = true })
 		end,
 	})
 
@@ -352,8 +357,6 @@ return require("packer").startup(function(use)
 		cmd = "NvimTreeToggle",
 		config = function()
 			require("nvim-tree").setup({})
-
-			vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 		end,
 	})
 
