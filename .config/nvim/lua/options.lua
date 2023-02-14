@@ -43,7 +43,6 @@ opt.updatetime = 400 -- decrease time for cursorhold event
 
 vim.g.python3_host_prog = '/usr/bin/python3' -- Tell Neovim directly which Python executable. Neovim doesn't have to make expensive calls to the OS trying to figure it out
 
-
 -- vim.opt.clipboard = "unnamedplus"
 
 -- if vim.fn.has('wsl') == 1 then

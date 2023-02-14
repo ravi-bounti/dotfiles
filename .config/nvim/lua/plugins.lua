@@ -117,11 +117,12 @@ return require("packer").startup(function(use)
 				highlight = {
 					enable = true,
 					disable = { "latex" },
+					additional_vim_regex_highlighting = true
 				},
 				indent = {
 					enable = true,
+					disable = {"python"},
 				},
-				additional_vim_regex_highlighting = true,
 			})
 		end,
 	})
@@ -350,6 +351,12 @@ return require("packer").startup(function(use)
 			})
 		end,
 	})
+
+  use{ 'anuvyklack/pretty-fold.nvim',
+   config = function()
+      require('pretty-fold').setup()
+   end
+  }
 
 	use({
 		"kyazdani42/nvim-tree.lua",
