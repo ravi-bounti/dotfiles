@@ -29,21 +29,12 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --glob "!{.git,.hg}/
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 
-# opam configuration
-# [[ ! -r /home/rkk/.opam/opam-init/init.zsh ]] || source /home/rkk/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-#export PATH=$PATH:/home/rkk/.local/bin
-
 # WSL2
 export PATH=$PATH:/mnt/c/Windows/SysWOW64
-# export PATH=$(echo "$PATH" | sed -e 's/:\/mnt[^:]*//g')
+export PATH=$PATH:/home/rkk/.local/bin
 
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

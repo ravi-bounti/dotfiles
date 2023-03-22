@@ -23,3 +23,5 @@ vim.api.nvim_set_keymap("v", "<c-w>", "<Esc>:wq<CR>", { noremap = true, silent =
 
 -- nvim lazy loading
 vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+
+vim.g.clipboard=unnamedplus

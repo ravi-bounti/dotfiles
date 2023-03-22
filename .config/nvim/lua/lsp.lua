@@ -71,7 +71,6 @@ null_ls.setup({
 		null_ls.builtins.formatting.trim_newlines,
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.fixjson,
-		null_ls.builtins.formatting.lua_format,
 		null_ls.builtins.formatting.prettier,
 	},
 })

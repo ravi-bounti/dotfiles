@@ -43,13 +43,3 @@ opt.updatetime = 400 -- decrease time for cursorhold event
 
 vim.g.python3_host_prog = '/usr/bin/python3' -- Tell Neovim directly which Python executable. Neovim doesn't have to make expensive calls to the OS trying to figure it out
 
--- vim.opt.clipboard = "unnamedplus"
-
--- if vim.fn.has('wsl') == 1 then
---   vim.api.nvim_create_autocmd('TextYankPost', {
---     group = vim.api.nvim_create_augroup('Yank', { clear = true }),
---       callback = function()
---         vim.fn.system('clip.exe', vim.fn.getreg('"'))
---       end,
---     })
--- end

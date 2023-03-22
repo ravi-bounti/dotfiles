@@ -12,8 +12,8 @@ local servers = {
   "rust_analyzer",
   "tsserver",
   "bashls",
-  "sumneko_lua"
-}
+  -- "lua_ls"
+ }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
     on_attach = lsp_util.on_attach,
