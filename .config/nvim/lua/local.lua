@@ -12,7 +12,8 @@ local servers = {
   "rust_analyzer",
   "tsserver",
   "bashls",
-  -- "lua_ls"
+  "ccls",
+--  "lua_ls"
  }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({

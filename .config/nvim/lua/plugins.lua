@@ -29,7 +29,10 @@ return require("packer").startup(function(use)
 
 	use({
 		"phha/zenburn.nvim",
-		config = function() require("zenburn").setup() end
+		config = function() 
+      require("zenburn").setup() 
+      vim.cmd("colorscheme zenburn")
+    end,
 	})
 
 	use({
@@ -405,6 +408,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+  use("tribela/vim-transparent")
 	use("mfussenegger/nvim-dap")
 	-- use 'williamboman/nvim-lsp-installer'
 	if packer_bootstrap then

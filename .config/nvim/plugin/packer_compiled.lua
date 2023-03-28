@@ -244,6 +244,11 @@ _G.packer_plugins = {
     path = "/home/rkk/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
+  ["vim-transparent"] = {
+    loaded = true,
+    path = "/home/rkk/.local/share/nvim/site/pack/packer/start/vim-transparent",
+    url = "https://github.com/tribela/vim-transparent"
+  },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\2;\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0" },
     loaded = true,
@@ -252,7 +257,7 @@ _G.packer_plugins = {
   },
   ["zenburn.nvim"] = {
     after = { "lualine.nvim" },
-    config = { "\27LJ\2\0025\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fzenburn\frequire\0" },
+    config = { "\27LJ\2\2a\0\0\2\0\6\0\n6\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\1\5\0B\0\2\1K\0\1\0\24colorscheme zenburn\bcmd\bvim\nsetup\fzenburn\frequire\0" },
     loaded = true,
     only_config = true,
     path = "/home/rkk/.local/share/nvim/site/pack/packer/start/zenburn.nvim",
@@ -267,7 +272,7 @@ try_loadstring("\27LJ\2\0029\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\
 time([[Config for trouble.nvim]], false)
 -- Config for: zenburn.nvim
 time([[Config for zenburn.nvim]], true)
-try_loadstring("\27LJ\2\0025\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fzenburn\frequire\0", "config", "zenburn.nvim")
+try_loadstring("\27LJ\2\2a\0\0\2\0\6\0\n6\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0'\1\5\0B\0\2\1K\0\1\0\24colorscheme zenburn\bcmd\bvim\nsetup\fzenburn\frequire\0", "config", "zenburn.nvim")
 time([[Config for zenburn.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
