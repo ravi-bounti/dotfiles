@@ -13,8 +13,8 @@ local servers = {
   "tsserver",
   "bashls",
   "ccls",
---  "lua_ls"
- }
+  --  "lua_ls"
+}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
     on_attach = lsp_util.on_attach,

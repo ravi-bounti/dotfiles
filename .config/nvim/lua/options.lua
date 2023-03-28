@@ -12,7 +12,6 @@ vim.cmd([[
   augroup END
 ]])
 
--- vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 opt.directory = "/tmp"
 opt.showmatch = true -- show matching brackets
 opt.smartindent = true -- use c-like indents when no indentexpr is used
