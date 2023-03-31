@@ -12,7 +12,7 @@ local servers = {
   "rust_analyzer",
   "tsserver",
   "bashls",
-  "ccls",
+  -- "ccls",
   --  "lua_ls"
 }
 for _, lsp in ipairs(servers) do
@@ -21,6 +21,13 @@ for _, lsp in ipairs(servers) do
     capabilities = lsp_util.capabilities,
   })
 end
+
+-- Needs own one because it has utf-32 by default
+nvim_lsp['ccls'].setup({
+  on_attach = lsp_util.on_attach,
+  capabilities = lsp_util.capabilities,
+  offset_encoding = "utf-16",
+})
 
 -- nvim_lsp["jedi_language_server"].setup({
 --   on_attach = lsp_util.on_attach,

@@ -18,9 +18,11 @@ require("lazy").setup({
     "dstein64/vim-startuptime",
     {
         "phha/zenburn.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
             require("zenburn").setup()
-            vim.cmd("colorscheme zenburn")
+            -- vim.cmd("colorscheme zenburn")
         end,
     },
     "folke/tokyonight.nvim",
