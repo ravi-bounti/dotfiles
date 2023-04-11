@@ -4,6 +4,7 @@ local lsp_util = require("lsp")
 -- This imports `lua/lspconfig/init.lua` from the nvim-lspconfig plugin.
 local nvim_lsp = require("lspconfig")
 
+
 -- These will only autostart on the corresponding filetypes, iow you don't need
 -- to gate these behind a filetype check.
 local servers = {
@@ -12,6 +13,8 @@ local servers = {
   "rust_analyzer",
   "tsserver",
   "bashls",
+  "gopls",
+  "golangci_lint_ls",
   -- "ccls",
   --  "lua_ls"
 }
