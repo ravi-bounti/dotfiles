@@ -1,3 +1,4 @@
+# zmodload zsh/zprof # zsh startup profile start
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t auto || tmux new -s auto 
 fi
@@ -6,6 +7,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# export NVM_LAZY_LOAD=true
 
 ZSH_THEME="robbyrussell"
 
@@ -13,6 +15,8 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+  zsh-lazyload
+  # zsh-nvm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -35,13 +39,14 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 # https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-export NVM_DIR=~/.nvm
-source /usr/local/opt/nvm/nvm.sh
-nvm use 16.8.0
+
+alias mlt='cd ~/go/src/github.com/bountihq/monolith'
+alias ftd="cd ~/go/src/github.com/bountihq/frontend"
+
+# lazyload nvm -- '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" && export NVM_DIR=~/.nvm && source /usr/local/opt/nvm/nvm.sh && nvm use 16.8.0'
+lazyload diff2html npm nvm node -- 'export NVM_DIR=~/.nvm && source /usr/local/opt/nvm/nvm.sh && nvm use 16.8.0'
+
+# zprof # zsh startup profile end

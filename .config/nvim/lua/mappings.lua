@@ -16,9 +16,9 @@ vim.api.nvim_set_keymap("n", "<c-s>", ":w<CR>", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("v", "<c-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
 
 -- write quit
-vim.api.nvim_set_keymap("i", "<c-w>", "<ESC>:wq<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<c-w>", ":wq<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<c-w>", "<Esc>:wq<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<c-w>", "<ESC>:wq<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<c-w>", ":wq<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("v", "<c-w>", "<Esc>:wq<CR>", { noremap = true, silent = true })
 
 -- nvim lazy loading
 -- vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
